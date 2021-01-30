@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import api from '../lib/api'
 
 const Home = (props) => {
 
@@ -8,6 +9,16 @@ const Home = (props) => {
     e.preventDefault();
     props.history.push(`/results/${search}`);
   }
+
+  useEffect(() => {
+    api.getProjects()
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.warn(error);
+    });
+  }, []);
 
   return (
     <div>
