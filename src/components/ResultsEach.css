@@ -1,0 +1,17 @@
+.resultsEach {
+  display: inline-block;
+  margin: 0 5px;
+  width: 290px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+img {
+  display: block;
+  width: 280px;
+  margin: 5px auto;
+}
+
+p {
+  margin: 5px;
+}

@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import ResultsEach from './ResultsEach'
 import api from '../lib/api'
+import './Home.css'
 
 const Home = (props) => {
 
   const [search, setSearch] = useState('');
+  const [projects, setProjects] = useState([]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -14,6 +17,7 @@ const Home = (props) => {
     api.getProjects()
     .then(response => {
       console.log(response);
+      setProjects(response.data);
     })
     .catch(error => {
       console.warn(error);
@@ -31,6 +35,13 @@ const Home = (props) => {
         </label><br/>
         <button>Search</button>
       </form>
+      <div className="gridContainer">
+        {
+          projects.map(p => (
+            <ResultsEach key={p._id} project={p}/>
+          ))
+        }
+      </div>
     </div>
   );
 } // Search
