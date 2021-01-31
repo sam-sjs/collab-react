@@ -1,0 +1,17 @@
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+label {
+  grid-column: 1 / 2;
+}
+
+input {
+  grid-column: 2 / 3;
+}
+
+.signup {
+  max-width: 500px;
+  margin: 0 auto;
+}
