@@ -1,0 +1,26 @@
+.userDetails {
+  max-width: 1000px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.userDetails > div {
+  display: inline-block;
+}
+
+.imageContainer img {
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.userProjects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.leadOn {
+  border: 2px solid gold;
+}

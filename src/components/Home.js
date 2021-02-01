@@ -35,10 +35,12 @@ const Home = (props) => {
         </label><br/>
         <button>Search</button>
       </form>
-      <div className="gridContainer">
+      <div className="flexContainer">
         {
+          projects.length > 0
+          &&
           projects.map(p => (
-            <ResultsEach key={p._id} project={p}/>
+            <ResultsEach key={p._id} project={p} color="black"/>
           ))
         }
       </div>

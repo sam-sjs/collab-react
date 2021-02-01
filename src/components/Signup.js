@@ -7,6 +7,7 @@ const Signup = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [image, setImage] = useState('');
   const [tag, setTag] = useState('');
   const [confirmedTags, setConfirmedTags] = useState([]);
 
@@ -20,6 +21,7 @@ const Signup = () => {
       params: {
         name: name,
         email: email,
+        image: image,
         tags: confirmedTags
       }
     });
@@ -43,6 +45,14 @@ const Signup = () => {
           type="text"
           placeholder="Enter email"
           onChange={e => setEmail(e.target.value)}
+        />
+
+        <label htmlFor="image">Profile Image:</label>
+        <input
+          id="image"
+          type="text"
+          placeholder="Enter profile image URL"
+          onChange={e => setImage(e.target.value)}
         />
 
         <label htmlFor="tags">Add Tags:</label>

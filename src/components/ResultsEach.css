@@ -6,12 +6,20 @@
   border: 1px solid black;
 }
 
-img {
+.black {
+  border: 1px solid black;
+}
+
+.gold {
+  border: 2px solid gold;
+}
+
+.resultsEach img {
   display: block;
   width: 280px;
   margin: 5px auto;
 }
 
-p {
+.resultsEach p {
   margin: 5px;
 }

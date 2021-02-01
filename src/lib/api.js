@@ -10,6 +10,10 @@ const api = {
     return axios.post(`${config.url.API_URL}/users/create`, params);
   },
 
+  patchUpdateUser(params) {
+    return axios.patch(`${config.url.API_URL}/users/update`, params);
+  },
+
   postUserRequest(params) {
     return axios.post(`${config.url.API_URL}/user`, params);
   }

@@ -3,7 +3,7 @@ import './ResultsEach.css'
 
 const ResultsEach = (props) => {
   return (
-    <div className="resultsEach">
+    <div className={"resultsEach " + props.color}>
       <img src={props.project.image} alt={"Image of " + props.project.name}/>
       <p><strong>{props.project.name}</strong></p>
       <p><em>{props.project.catagory}</em></p>

@@ -1,13 +1,13 @@
-form {
+.signup form {
   display: grid;
   grid-template-columns: auto 1fr;
 }
 
-label {
+.signup label {
   grid-column: 1 / 2;
 }
 
-input {
+.signup input {
   grid-column: 2 / 3;
 }
 
