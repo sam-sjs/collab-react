@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import api from '../lib/api'
-import './UserUpdate.css'
+import './UserDelete.css'
 
-const UserUpdate = (props) => {
+const UserDelete = (props) => {
 
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const handleSubmit = () => {
     api.deleteUser({password: password})
     .then(response => {
-      // Redirect to '/'
+      history.push("/");
     })
     .catch(error => {
       console.warn(error);
@@ -20,7 +22,7 @@ const UserUpdate = (props) => {
     <div className={`modal ${props.show ? 'show' : ''}`} onClick={props.onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
-          <h4 className="modal-title">Confirm delete user {name}</h4>
+          <h4 className="modal-title">Confirm delete</h4>
         </div>
         <div className="modal-body">
 
@@ -44,4 +46,4 @@ const UserUpdate = (props) => {
   )
 }
 
-export default UserUpdate
+export default UserDelete

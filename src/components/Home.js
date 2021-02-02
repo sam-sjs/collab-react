@@ -25,17 +25,23 @@ const Home = (props) => {
   }, []);
 
   return (
-    <div>
-      <h1>CollaborMate</h1>
+    <div className="home-page">
+      <div className="home-header">
+        <h1>CollaborMate</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search for projects to participate in!<br/>
-          <input type="text" placeholder="Enter search" onChange={e => setSearch(e.target.value)}/>
-        </label><br/>
-        <button>Search</button>
-      </form>
-      <div className="flexContainer">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Search for projects to participate in!<br/>
+            <input
+              type="text"
+              placeholder="Enter search"
+              onChange={e => setSearch(e.target.value)}
+            />
+          </label>
+          <button>Search</button>
+        </form>
+      </div>
+      <div className="flex-container">
         {
           projects.length > 0
           &&

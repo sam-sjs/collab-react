@@ -1,7 +1,16 @@
-.userDetails {
+.userShow {
   max-width: 1000px;
+  margin: 0 auto;
+}
+
+.userShow > h3 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.userDetails {
   margin: 20px auto;
-  border: 1px solid black;
+  border: 2px solid #DDD;
 }
 
 .userDetails > div {
@@ -16,11 +25,7 @@
 .userProjects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
-}
-
-.leadOn {
-  border: 2px solid gold;
 }

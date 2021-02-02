@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ResultsEach from './ResultsEach'
 import UserUpdate from './UserUpdate'
 import UserDelete from './UserDelete'
+import ProjectCreate from './ProjectCreate'
 import api from '../lib/api'
 import './UserShow.css'
 
@@ -10,6 +11,7 @@ const UserShow = (props) => {
   const [user, setUser] = useState({});
   const [updateShow, setUpdateShow] = useState(false);
   const [deleteShow, setDeleteShow] = useState(false);
+  const [projectCreateShow, setProjectCreateShow] = useState(false);
 
   const updateUser = (newUser) => {
     setUser(newUser);
@@ -27,7 +29,7 @@ const UserShow = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="userShow">
       <div className="userDetails">
         <div className="imageContainer">
           <img src={user.image} alt={user.name + " profile image"}/>
@@ -46,10 +48,16 @@ const UserShow = (props) => {
               user={user}
               updateUser={updateUser}
             />
-            <UserDelete onClose={() => setDeleteShow(false)} show={deleteShow}}
           }
+          <UserDelete onClose={() => setDeleteShow(false)} show={deleteShow}/>
         </div>
       </div>
+      <h3>Your Projects:</h3>
+      <button onClick={() => setProjectCreateShow(true)}>New Project</button>
+      <ProjectCreate
+        onClose={() => setProjectCreateShow(false)}
+        show={projectCreateShow}
+      />
       <div className="userProjects">
         {
           user._id

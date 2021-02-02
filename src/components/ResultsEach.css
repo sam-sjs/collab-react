@@ -3,11 +3,20 @@
   margin: 0 5px;
   width: 290px;
   height: 600px;
-  border: 1px solid black;
+  border: 1px solid #DDD;
+  /* background-color: #1C4966; */
+  /* background-color: #3792CB; */
+  background-color: #296D98;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.resultsEach:hover {
+  transform: scale(1.06);
 }
 
 .black {
-  border: 1px solid black;
+  border: 2px solid #DDD;
 }
 
 .gold {
@@ -18,6 +27,7 @@
   display: block;
   width: 280px;
   margin: 5px auto;
+  border: 1px solid #000;
 }
 
 .resultsEach p {

@@ -18,11 +18,11 @@ const api = {
   },
 
   getUser() {
-    return axios.post(`${config.url.API_URL}/user`);
+    return axios.get(`${config.url.API_URL}/user`);
   },
 
   deleteUser(params) {
-    return axios.delete(`${config.url.API_URL}/user/delete`, params);
+    return axios.post(`${config.url.API_URL}/user/delete`, params);
   },
 
   postLogin(params) {
