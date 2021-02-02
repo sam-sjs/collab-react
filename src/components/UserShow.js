@@ -1,21 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import ResultsEach from './ResultsEach'
 import UserUpdate from './UserUpdate'
+import UserDelete from './UserDelete'
 import api from '../lib/api'
 import './UserShow.css'
 
 const UserShow = (props) => {
 
   const [user, setUser] = useState({});
-  const [tempUserId, setTempUserId] = useState('60169a3c9100cc387e0f16e8');
-  const [show, setShow] = useState(false);
+  const [updateShow, setUpdateShow] = useState(false);
+  const [deleteShow, setDeleteShow] = useState(false);
+
+  const updateUser = (newUser) => {
+    setUser(newUser);
+  }
 
   useEffect(() => {
-    api.postUserRequest({
-      params: {
-        id: tempUserId
-      }
-    })
+    api.getUser()
     .then(response => {
       console.log(response);
       setUser(response.data);
@@ -34,11 +35,18 @@ const UserShow = (props) => {
         <div>
           <h3><strong>{user.name}</strong></h3><br />
           {user.email}<br />
-          <button onClick={() => setShow(true)}>Show Modal</button>
+          <button onClick={() => setUpdateShow(true)}>Update</button>
+          <button onClick={() => setDeleteShow(true)}>Delete</button>
           {
             user._id
             &&
-            <UserUpdate onClose={() => setShow(false)} show={show} user={user} />
+            <UserUpdate
+              onClose={() => setUpdateShow(false)}
+              show={updateShow}
+              user={user}
+              updateUser={updateUser}
+            />
+            <UserDelete onClose={() => setDeleteShow(false)} show={deleteShow}}
           }
         </div>
       </div>
@@ -46,15 +54,15 @@ const UserShow = (props) => {
         {
           user._id
           &&
-          user.leadOn.map(p => (
-            <ResultsEach key={p._id} project={p} color="gold"/>
+          user.leadOn.map((p, i) => (
+            <ResultsEach key={i} project={p} color="gold"/>
           ))
         }
         {
           user._id
           &&
-          user.memberOn.map(p => (
-            <ResultsEach key={p._id} project={p} color="black"/>
+          user.memberOn.map((p, i) => (
+            <ResultsEach key={i} project={p} color="black"/>
           ))
         }
       </div>

@@ -1,0 +1,17 @@
+.login form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.login label {
+  grid-column: 1 / 2;
+}
+
+.login input {
+  grid-column: 2 / 3;
+}
+
+.login {
+  max-width: 500px;
+  margin: 0 auto;
+}

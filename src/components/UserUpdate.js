@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import api from '../lib/api'
 import './UserUpdate.css'
 
 const UserUpdate = (props) => {
@@ -14,7 +15,23 @@ const UserUpdate = (props) => {
     setTag('');
   }
 
-  
+  const handleSubmit = () => {
+    api.patchUpdateUser({
+      params: {
+        _id: props.user._id,
+        name: name,
+        email: email,
+        image: image,
+        tags: confirmedTags
+      }
+    })
+    .then(response => {
+      props.updateUser(response.data);
+    })
+    .catch(error => {
+      console.warn(error);
+    });
+  }
 
   return (
     <div className={`modal ${props.show ? 'show' : ''}`} onClick={props.onClose}>
@@ -23,10 +40,7 @@ const UserUpdate = (props) => {
           <h4 className="modal-title">Update profile for {name}</h4>
         </div>
         <div className="modal-body">
-          {
-            name
-            &&
-            <form id="updateUser">
+            <form id="updateUser" onSubmit={handleSubmit}>
               <label htmlFor="name">Name:</label>
               <input
                 id="name"
@@ -70,7 +84,6 @@ const UserUpdate = (props) => {
 
               <button form="updateUser">Update Profile!</button>
             </form>
-          }
         </div>
         <div className="modal-footer">
           <button onClick={props.onClose} className="button">Close</button>

@@ -1,6 +1,9 @@
 import axios from 'axios'
 import {config} from './constants'
 
+const token = localStorage.getItem('jwtToken');
+axios.defaults.headers.common['Authorization'] = token
+
 const api = {
   getProjects() {
     return axios.get(`${config.url.API_URL}/flights`);
@@ -11,11 +14,19 @@ const api = {
   },
 
   patchUpdateUser(params) {
-    return axios.patch(`${config.url.API_URL}/users/update`, params);
+    return axios.patch(`${config.url.API_URL}/user/update`, params);
   },
 
-  postUserRequest(params) {
-    return axios.post(`${config.url.API_URL}/user`, params);
+  getUser() {
+    return axios.post(`${config.url.API_URL}/user`);
+  },
+
+  deleteUser(params) {
+    return axios.delete(`${config.url.API_URL}/user/delete`, params);
+  },
+
+  postLogin(params) {
+    return axios.post(`${config.url.API_URL}/login`, params);
   }
 };
 
