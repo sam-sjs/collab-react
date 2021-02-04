@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import useChat from '../lib/useChat'
-import './ChatRoom.css'
 
 const ChatRoom = (props) => {
 
-  const roomId = props.projectId;
+  const {_id: roomId, name} = props.project;
   const {messages, sendMessage} = useChat(roomId);
   const [newMessage, setNewMessage] = useState('');
 
@@ -15,9 +14,9 @@ const ChatRoom = (props) => {
 
   return(
     <div className="chat-room-container">
-      <h1 className="room-name">Room: {roomId}</h1>
+      <h3 className="room-name">Room: {name}</h3>
       <div className="messages-container">
-        <ol className="messages-list">
+        <ul className="messages-list">
           {
             messages.map((m, i) => (
               <li
@@ -30,17 +29,19 @@ const ChatRoom = (props) => {
               </li>
             ))
           }
-        </ol>
+        </ul>
       </div>
-      <textarea
-        value={newMessage}
-        onChange={e => setNewMessage(e.target.value)}
-        placeholder="Write message..."
-        className="new-message-input-field"
-      />
-      <button onClick={handleSendMessage} className="send-message-button">
-        Send
-      </button>
+      <div className="chat-input">
+        <textarea
+          value={newMessage}
+          onChange={e => setNewMessage(e.target.value)}
+          placeholder="Write message..."
+          className="new-message-input-field"
+        />
+        <button onClick={handleSendMessage} className="send-message-button">
+          Send
+        </button>
+      </div>
     </div>
   );
 };

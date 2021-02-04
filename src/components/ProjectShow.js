@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ChatRoom from './ChatRoom'
+import Calendar from './Calendar'
 import api from '../lib/api'
 import './ProjectShow.css'
 
@@ -30,7 +31,8 @@ const ProjectShow = (props) => {
         </div>
       </div>
       <div className="project-body">
-        <ChatRoom className="chat-room" projectId={project._id}/>
+        <ChatRoom className="chat-room" project={project}/>
+        <Calendar/>
       </div>
     </div>
   );
