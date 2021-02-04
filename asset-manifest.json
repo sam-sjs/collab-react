@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/collab-react/static/css/main.64d5bdbd.chunk.css",
-    "main.js": "/collab-react/static/js/main.c2adcb6c.chunk.js",
-    "main.js.map": "/collab-react/static/js/main.c2adcb6c.chunk.js.map",
+    "main.js": "/collab-react/static/js/main.8daaeea9.chunk.js",
+    "main.js.map": "/collab-react/static/js/main.8daaeea9.chunk.js.map",
     "runtime-main.js": "/collab-react/static/js/runtime-main.21ed0489.js",
     "runtime-main.js.map": "/collab-react/static/js/runtime-main.21ed0489.js.map",
     "static/css/2.9aaf2cf1.chunk.css": "/collab-react/static/css/2.9aaf2cf1.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.9aaf2cf1.chunk.css",
     "static/js/2.27d856a6.chunk.js",
     "static/css/main.64d5bdbd.chunk.css",
-    "static/js/main.c2adcb6c.chunk.js"
+    "static/js/main.8daaeea9.chunk.js"
   ]
 }
