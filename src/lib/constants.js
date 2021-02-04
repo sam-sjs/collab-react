@@ -1,7 +1,7 @@
 // Production variables
 const prod = {
   url: {
-    API_URL: 'https://collabormate.herokuapp.com/'
+    API_URL: 'https://collabormate.herokuapp.com'
   }
 };
 
