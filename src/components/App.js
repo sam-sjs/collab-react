@@ -13,7 +13,6 @@ const App = () => {
       <div className="App">
         <header>
           <nav>
-            U
             <Link to="/">Home</Link>
             <Link to="/user">Profile</Link>
             <Link to="/signup">Signup</Link>
