@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/collab-react/static/css/main.9395c091.chunk.css",
-    "main.js": "/collab-react/static/js/main.103b69c6.chunk.js",
-    "main.js.map": "/collab-react/static/js/main.103b69c6.chunk.js.map",
+    "main.css": "/collab-react/static/css/main.64d5bdbd.chunk.css",
+    "main.js": "/collab-react/static/js/main.7975f301.chunk.js",
+    "main.js.map": "/collab-react/static/js/main.7975f301.chunk.js.map",
     "runtime-main.js": "/collab-react/static/js/runtime-main.21ed0489.js",
     "runtime-main.js.map": "/collab-react/static/js/runtime-main.21ed0489.js.map",
     "static/css/2.9aaf2cf1.chunk.css": "/collab-react/static/css/2.9aaf2cf1.chunk.css",
-    "static/js/2.f8abe8d0.chunk.js": "/collab-react/static/js/2.f8abe8d0.chunk.js",
-    "static/js/2.f8abe8d0.chunk.js.map": "/collab-react/static/js/2.f8abe8d0.chunk.js.map",
+    "static/js/2.27d856a6.chunk.js": "/collab-react/static/js/2.27d856a6.chunk.js",
+    "static/js/2.27d856a6.chunk.js.map": "/collab-react/static/js/2.27d856a6.chunk.js.map",
     "index.html": "/collab-react/index.html",
     "static/css/2.9aaf2cf1.chunk.css.map": "/collab-react/static/css/2.9aaf2cf1.chunk.css.map",
-    "static/css/main.9395c091.chunk.css.map": "/collab-react/static/css/main.9395c091.chunk.css.map",
-    "static/js/2.f8abe8d0.chunk.js.LICENSE.txt": "/collab-react/static/js/2.f8abe8d0.chunk.js.LICENSE.txt"
+    "static/css/main.64d5bdbd.chunk.css.map": "/collab-react/static/css/main.64d5bdbd.chunk.css.map",
+    "static/js/2.27d856a6.chunk.js.LICENSE.txt": "/collab-react/static/js/2.27d856a6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.21ed0489.js",
     "static/css/2.9aaf2cf1.chunk.css",
-    "static/js/2.f8abe8d0.chunk.js",
-    "static/css/main.9395c091.chunk.css",
-    "static/js/main.103b69c6.chunk.js"
+    "static/js/2.27d856a6.chunk.js",
+    "static/css/main.64d5bdbd.chunk.css",
+    "static/js/main.7975f301.chunk.js"
   ]
 }
