@@ -6,7 +6,11 @@ axios.defaults.headers.common['Authorization'] = token
 
 const api = {
   getProjects() {
-    return axios.get(`${config.url.API_URL}/flights`);
+    return axios.get(`${config.url.API_URL}/projects`);
+  },
+
+  getProjectById(params) {
+    return axios.get(`${config.url.API_URL}/project/${params}`);
   },
 
   postNewUser(params) {
@@ -27,6 +31,10 @@ const api = {
 
   postLogin(params) {
     return axios.post(`${config.url.API_URL}/login`, params);
+  },
+
+  postCreateProject(params) {
+    return axios.post(`${config.url.API_URL}/projects/create`, params);
   }
 };
 

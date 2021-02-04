@@ -20,6 +20,8 @@
 .imageContainer img {
   vertical-align: middle;
   margin: 5px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .userProjects {

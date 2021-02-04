@@ -5,6 +5,7 @@ import Results from './Results'
 import Signup from './Signup'
 import UserShow from './UserShow'
 import Login from './Login'
+import ProjectShow from './ProjectShow'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/user" component={UserShow}/>
         <Route exact path="/login" component={Login}/>
+        <Route exact path="/project/:id" component={ProjectShow}/>
       </div>
     </Router>
   );

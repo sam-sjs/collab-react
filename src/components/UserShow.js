@@ -17,10 +17,15 @@ const UserShow = (props) => {
     setUser(newUser);
   }
 
+  const addNewProject = (newProject) => {
+    const newUser = user;
+    newUser.leadOn.push(newProject);
+    setUser(newUser);
+  }
+
   useEffect(() => {
     api.getUser()
     .then(response => {
-      console.log(response);
       setUser(response.data);
     })
     .catch(error => {
@@ -57,6 +62,7 @@ const UserShow = (props) => {
       <ProjectCreate
         onClose={() => setProjectCreateShow(false)}
         show={projectCreateShow}
+        addNewProject={addNewProject}
       />
       <div className="userProjects">
         {

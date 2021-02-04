@@ -27,6 +27,7 @@ const UserUpdate = (props) => {
     })
     .then(response => {
       props.updateUser(response.data);
+      props.onClose();
     })
     .catch(error => {
       console.warn(error);
@@ -40,10 +41,10 @@ const UserUpdate = (props) => {
           <h4 className="modal-title">Update profile for {name}</h4>
         </div>
         <div className="modal-body">
-            <form id="updateUser" onSubmit={handleSubmit}>
-              <label htmlFor="name">Name:</label>
+            <form id="update-user" onSubmit={handleSubmit}>
+              <label htmlFor="user-name">Name:</label>
               <input
-                id="name"
+                id="user-name"
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
@@ -57,9 +58,9 @@ const UserUpdate = (props) => {
                 onChange={e => setEmail(e.target.value)}
               />
 
-              <label htmlFor="image">Profile Image:</label>
+              <label htmlFor="user-image">Profile Image:</label>
               <input
-                id="image"
+                id="user-image"
                 type="text"
                 value={image}
                 onChange={e => setImage(e.target.value)}
@@ -82,7 +83,7 @@ const UserUpdate = (props) => {
                 }
               </div>
 
-              <button form="updateUser">Update Profile!</button>
+              <button form="update-user">Update Profile!</button>
             </form>
         </div>
         <div className="modal-footer">

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import api from '../lib/api'
 import './ProjectCreate.css'
 
 const ProjectCreate = (props) => {
@@ -15,6 +16,29 @@ const ProjectCreate = (props) => {
     setLookingFor('');
   }
 
+  const handleSubmit = () => {
+    api.postCreateProject({
+      name: name,
+      description: description,
+      catagory: catagory,
+      lookingFor: confirmed,
+      image: image
+    })
+    .then(response => {
+      props.addNewProject(response.data);
+      setName('');
+      setDescription('');
+      setCatagory('');
+      setLookingFor('');
+      setConfirmed([]);
+      setImage('');
+      props.onClose();
+    })
+    .catch(error => {
+      console.warn(error);
+    });
+  }
+
   return (
     <div className="project-create">
       <div className={`modal ${props.show ? 'show' : ''}`} onClick={props.onClose}>
@@ -23,12 +47,13 @@ const ProjectCreate = (props) => {
             <h4 className="modal-title">Create New Project</h4>
           </div>
           <div className="modal-body">
-              <form id="create-form">
-                <label htmlFor="name">Project Name:</label>
+              <form id="create-form" onSubmit={handleSubmit}>
+                <label htmlFor="project-name">Project Name:</label>
                 <input
-                  id="name"
+                  id="project-name"
                   type="text"
                   placeholder="Enter project name"
+                  value={name}
                   onChange={e => setName(e.target.value)}
                 />
 
@@ -37,6 +62,7 @@ const ProjectCreate = (props) => {
                   id="description"
                   type="text"
                   placeholder="Enter description"
+                  value={description}
                   onChange={e => setDescription(e.target.value)}
                 ></textarea>
 
@@ -45,6 +71,7 @@ const ProjectCreate = (props) => {
                   id="catagory"
                   type="text"
                   placeholder="Enter catagory"
+                  value={catagory}
                   onChange={e => setCatagory(e.target.value)}
                 />
 
@@ -53,9 +80,10 @@ const ProjectCreate = (props) => {
                   id="looking-for"
                   type="text"
                   placeholder="Who do you want to join the team?"
+                  value={lookingFor}
                   onChange={e => setLookingFor(e.target.value)}
                 />
-                <button onClick={handleConfirm}>Add Tag</button>
+                <button type="button" onClick={handleConfirm}>Add Tag</button>
                 <div className="confirmed">
                   {
                     confirmed.map((t, i) => (
@@ -64,11 +92,12 @@ const ProjectCreate = (props) => {
                   }
                 </div>
 
-                <label htmlFor="image">Image:</label>
+                <label htmlFor="project-image">Image:</label>
                 <input
-                  id="image"
+                  id="project-image"
                   type="text"
                   placeholder="Enter image URL"
+                  value={image}
                   onChange={e => setImage(e.target.value)}
                 />
 

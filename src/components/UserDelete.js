@@ -12,6 +12,7 @@ const UserDelete = (props) => {
     api.deleteUser({password: password})
     .then(response => {
       history.push("/");
+      props.onClose();
     })
     .catch(error => {
       console.warn(error);
