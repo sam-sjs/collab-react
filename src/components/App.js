@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, HashRouter as Router} from 'react-router-dom'
+import {Route, Link, HashRouter as Router} from 'react-router-dom'
 import Home from './Home'
 import Results from './Results'
 import Signup from './Signup'
@@ -11,6 +11,14 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+        <header>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/user">Profile</Link>
+            <Link to="/signup">Signup</Link>
+            <Link to="/login">Login</Link>
+          </nav>
+        </header>
         <Route exact path="/" component={Home}/>
         <Route exact path="/results/:search" component={Results}/>
         <Route exact path="/signup" component={Signup}/>
